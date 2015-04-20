@@ -18,7 +18,7 @@ public class print extends JFrame {
 	JLabel titleLabel = new JLabel("Title");
 	JLabel firstNameLabel = new JLabel("First Name");
 	JLabel lastNameLabel = new JLabel("Last Name");
-	JLabel birthdateLabel = new JLabel("Data Nascimento");
+	JLabel birthdateLabel = new JLabel("Birthdate");
 	JLabel emailLabel = new JLabel("Email");
 	JLabel cpfLabel = new JLabel("CPF");
 	JLabel phoneLabel = new JLabel("Phone");
@@ -116,7 +116,7 @@ public class print extends JFrame {
 		lblNewLabel_2.setBounds(12, 55, 70, 15);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_4 = new JLabel("Data Nascimento:");
+		JLabel lblNewLabel_4 = new JLabel("Birthdate:");
 		lblNewLabel_4.setBounds(12, 136, 98, 15);
 		contentPane.add(lblNewLabel_4);
 		
