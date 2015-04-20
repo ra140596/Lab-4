@@ -125,23 +125,23 @@ public class form extends JFrame {
 		comboTitle.setBounds(58, 12, 81, 24);
 		contentPane.add(comboTitle);
 		
-		JLabel lblFirstName = new JLabel("First Name:");
+		JLabel lblFirstName = new JLabel("First Name*:");
 		lblFirstName.setBounds(12, 60, 90, 15);
 		contentPane.add(lblFirstName);
 		
-		JLabel lblLastName = new JLabel("Last Name:");
+		JLabel lblLastName = new JLabel("Last Name*:");
 		lblLastName.setBounds(12, 91, 90, 15);
 		contentPane.add(lblLastName);
 		
-		JLabel lblbirthdate = new JLabel("Data Nascimento:");
+		JLabel lblbirthdate = new JLabel("Birthdate*:");
 		lblbirthdate.setBounds(12, 122, 90, 15);
 		contentPane.add(lblbirthdate);
 		
-		JLabel lblemail = new JLabel("Email:");
+		JLabel lblemail = new JLabel("Email*:");
 		lblemail.setBounds(12, 153, 90, 15);
 		contentPane.add(lblemail);
 		
-		JLabel lblcpf = new JLabel("CPF:");
+		JLabel lblcpf = new JLabel("CPF*:");
 		lblcpf.setBounds(12, 184, 90, 15);
 		contentPane.add(lblcpf);
 		
@@ -182,6 +182,15 @@ public class form extends JFrame {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {		
 				//contentPane.setVisible(false);
+				if(textfirstName.getText().length() == 0 || textlastName.getText().length() == 0 || textbirthdate.getText().length() != 10 || textemail.getText().length() == 0 || textcpf.getText().length() != 11 || (textcep.getText().length() != 0 && textcep.getText().length() != 8)){
+					JFrame frame = new JFrame("Erro");
+					JLabel label = new JLabel("Formato inválido");
+					frame.getContentPane().add(label);
+					frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+					frame.pack();
+					frame.setVisible(true);
+					return;
+				}
 				print printForm = new print();
 				printForm.titleLabel.setText((String) comboTitle.getSelectedItem());
 				printForm.firstNameLabel.setText(textfirstName.getText());
